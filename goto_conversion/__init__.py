@@ -2,7 +2,7 @@ convertAmericanOdds = _convertAmericanOdds_py
 efficient_shin_conversion = _efficient_shin_conversion_py
 goto_conversion = _goto_conversion_py
 
-try
+try:
     import numpy as np
     convertAmericanOdds = _convertAmericanOdds_np
     efficient_shin_conversion = _efficient_shin_conversion_np
