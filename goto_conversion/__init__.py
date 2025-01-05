@@ -1,16 +1,3 @@
-convertAmericanOdds = _convertAmericanOdds_py
-efficient_shin_conversion = _efficient_shin_conversion_py
-goto_conversion = _goto_conversion_py
-
-try:
-    import numpy as np
-    convertAmericanOdds = _convertAmericanOdds_np
-    efficient_shin_conversion = _efficient_shin_conversion_np
-    goto_conversion = _goto_conversion_np
-except ImportError:
-    pass
-    
-
 def _convertAmericanOdds_np(listOfOdds):
     listOfOdds = listOfOdds.astype(float)
     isNegativeAmericanOdds = listOfOdds < 0.0
@@ -134,3 +121,17 @@ def zero_sum(listOfPrices, listOfVolumes):
     step = sum(listOfPrices)/sum(listOfSe)
     outputListOfPrices = [x - (y*step) for x,y in zip(listOfPrices, listOfSe)]
     return outputListOfPrices
+
+
+convertAmericanOdds = _convertAmericanOdds_py
+efficient_shin_conversion = _efficient_shin_conversion_py
+goto_conversion = _goto_conversion_py
+
+
+try:
+    import numpy as np
+    convertAmericanOdds = _convertAmericanOdds_np
+    efficient_shin_conversion = _efficient_shin_conversion_np
+    goto_conversion = _goto_conversion_np
+except ImportError:
+    pass
