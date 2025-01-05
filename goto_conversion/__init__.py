@@ -35,6 +35,7 @@ def efficient_shin_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudent
     errorCatchers(listOfOdds)
 
     try: #using numpy
+        import numpy as np
         #Compute parameters
         listOfPies = 1.0 / listOfOdds
         beta = np.sum(listOfPies)
@@ -70,6 +71,7 @@ def goto_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudentOdds = Fal
     errorCatchers(listOfOdds)
 
     try: #using numpy
+        import numpy as np
         listOfProbabilities = 1.0 / listOfOdds
         listOfSe = np.sqrt((listOfProbabilities - listOfProbabilities**2.0) / listOfProbabilities)
         step = (np.sum(listOfProbabilities) - total) / np.sum(listOfSe)
